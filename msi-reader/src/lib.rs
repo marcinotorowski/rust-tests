@@ -23,7 +23,7 @@ pub mod directory
     
     impl<'a> MsiDirectoryName<'a> {
         
-        fn source(&self) -> Option<MsiName>
+        pub fn source(&self) -> Option<MsiName>
         {
             if let Some(index) = self.combined.find(':')
             {
@@ -35,7 +35,7 @@ pub mod directory
             }        
         }
         
-        fn target(&self) -> MsiName
+        pub fn target(&self) -> MsiName
         {
             if let Some(index) = self.combined.find(':')
             {
@@ -47,7 +47,7 @@ pub mod directory
             } 
         }
     
-        fn combined(&self) -> &str {
+        pub fn combined(&self) -> &str {
             self.combined
         }
     }
